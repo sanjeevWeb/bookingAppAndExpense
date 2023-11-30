@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Table App</title>
+</head>
+<body>
+  <form id="createTableForm">
+    <label for="tableName">Table Name:</label>
+    <input type="text" id="tableName" required>
+
+    <div id="fieldsContainer">
+      <div>
+        <label for="fieldName">Field Name:</label>
+        <input type="text" class="fieldName" required>
+
+        <label for="fieldType">Field Type:</label>
+        <select class="fieldType" required>
+          <option value="INT">INT</option>
+          <option value="VARCHAR(255)">VARCHAR(255)</option>
+        </select>
+      </div>
+    </div>
+
+    <button type="button" id="addMoreFields">Add More Fields</button>
+    <button type="submit">Create Table</button>
+  </form>
+
+  <form id="insertDataForm">
+    <label for="dataTableName">Table Name:</label>
+    <input type="text" id="dataTableName" required>
+
+    <label for="dataFieldName">Field Name:</label>
+    <input type="text" id="dataFieldName" required>
+
+    <label for="dataFieldValue">Field Value:</label>
+    <input type="text" id="dataFieldValue" required>
+
+    <button type="submit">Insert Data</button>
+  </form>
+
+  <div id="tableData"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
