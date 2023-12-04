@@ -31,7 +31,7 @@ app.post('/api/createTable', (req, res) => {
   const { tableName, fields } = req.body;
 
   // Build the SQL query to create the table
-  const createTableQuery = `CREATE TABLE ${tableName} (${fields.map(field => `${field.name} ${field.type}`).join(', ')})`;
+  const createTableQuery = `CREATE TABLE ${tableName} (id INT UNIQUE PRIMARY KEY AUTO_INCREMENT,${fields.map(field => `${field.name} ${field.type}`).join(', ')})`;
 
   db.query(createTableQuery, (err) => {
     if (err) {

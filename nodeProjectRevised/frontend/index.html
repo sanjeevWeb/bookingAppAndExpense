@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Table App</title>
+</head>
+
+<body>
+  <div style="width:20%; height:100vh; float:left; border-right: 1px solid blueviolet;">
+    <h2>List of tables in Database</h2>
+    <ul id="displayTable">
+    </ul>
+  </div>
+  
+  <div style="width:78%;float: right;">
+    <form id="createTableForm">
+      <label for="tableName">Table Name:</label>
+      <input type="text" id="tableName" required>
+
+      <div id="fieldsContainer">
+        <div>
+          <label for="fieldName">Field Name:</label>
+          <input type="text" class="fieldName" id="fieldName" required>
+
+          <label for="fieldType">Field Type:</label>
+          <select class="fieldType" id="fieldType" required>
+            <option value="INT">INT</option>
+            <option value="VARCHAR(255)">VARCHAR(255)</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="button" id="addMoreFields">Add More Fields</button>
+      <button type="submit">Create Table</button>
+    </form>
+
+    <br>
+    <br>
+    <hr>
+
+    <form id="insertDataForm">
+      <label for="dataTableName">Table Name:</label>
+      <input type="text" id="dataTableName" required>
+
+      <div id="dataFieldContainer">
+        <!-- <div>
+          <label for="dataFieldName">Field Name:</label>
+          <input type="text" class="dataFieldName" required>
+
+          <label for="dataFieldValue">Field Value:</label>
+          <input type="text" class="dataFieldValue" required>
+        </div> -->
+
+      </div>
+      <!-- <button type="button" id="moreFields">Give More Fields</button> -->
+      <button type="button" id="addDataBtn">Add Data</button>
+      <!-- <button type="button" id="addFieldsBtn">Add Data</button> -->
+      <button type="submit">save data in DB</button>
+    </form>
+
+    <div id="tableData">
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
